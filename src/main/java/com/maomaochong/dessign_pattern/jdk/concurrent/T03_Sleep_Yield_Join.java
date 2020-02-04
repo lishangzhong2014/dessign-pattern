@@ -50,7 +50,7 @@ public class T03_Sleep_Yield_Join {
     t1和t2两个线程，在t1的某个点上调用了t2.join,它会跑到t2去运行，t1等待t2运 行完毕继续t1运行(自己join自己没有意义) */
     static void testJoin() {
         Thread t1 = new Thread(() -> {
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 System.out.println("A" + i);
                 try {
                     Thread.sleep(200);
@@ -81,7 +81,7 @@ public class T03_Sleep_Yield_Join {
         t1.start();
         t2.start();
 
-        t1.start();
-        t2.start();
+        // t1.start();
+        // t2.start();
     }
 }
